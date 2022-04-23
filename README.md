@@ -16,3 +16,11 @@ edit_assembly_code.py debug.s | a2
 No! Hit a roadblock. A program can not call asm on some string made during runtime. The assembly code in __asm__() must be fixed during compilation time. 
 
 
+# use mmap and byte code
+see b0.cpp
+How to convert c program into byte code on development machine?
+
+
+# use libtcc 
+compile c program on the fly in target and run it.
+see c0
