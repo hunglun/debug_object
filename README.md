@@ -24,3 +24,10 @@ How to convert c program into byte code on development machine?
 # use libtcc 
 compile c program on the fly in target and run it.
 see c0
+
+# b1 : read debug.o into memory and cast it to function does not work
+
+# conclusion : libtcc is the most promising option for creating debug object
+c0 can be splitted into 2 parts. The first part involves compilation to be done on sender program.
+The second part is to relocate the execution code to runnable memory in the receiver program.
+
