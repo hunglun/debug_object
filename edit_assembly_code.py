@@ -28,6 +28,10 @@ def extract_function_assembly_code(assembly_code):
     m=re.compile("\s+\.globl	func.*\.cfi_endproc", re.MULTILINE | re.DOTALL).search(assembly_code)
     return m.group(0)
 
+def extract_function_assembly_code_in_one_line(assembly_code):
+    a = extract_function_assembly_code(assembly_code)
+    return a.replace("\n","\\n\\t")
+
 def test_extract_function_assembly_code():
     code = """	.globl	func
 	.type	func, @function
