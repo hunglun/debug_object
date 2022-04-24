@@ -31,3 +31,11 @@ see c0
 c0 can be splitted into 2 parts. The first part involves compilation to be done on sender program.
 The second part is to relocate the execution code to runnable memory in the receiver program.
 
+Step 1:
+use tcc create dynamic library
+Step 2 :
+send the dynamic library to target program
+Step 3 :
+the target program saves the payload as a file and load the file as dynamic library
+Step 4 :
+find the symbol and call the desired function from the dynamic library
