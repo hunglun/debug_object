@@ -26,3 +26,12 @@ c0:
 
 c1:
 	gcc c1.cpp -fno-strict-aliasing -fno-strict-aliasing -I.. -I.. -lm -lpthread -ldl -ltcc -ldl -fpermissive -o c1.out
+
+# use dynamic library created from tcc, much smaller than gcc shared library
+c2:	c1
+	./c1.out && python3 use_dynamic_library.py
+
+# use python3 ctype and gcc dynamic library
+d0:
+	gcc debug.c -c -fPIC && gcc debug.o -shared -o libdebug.so \
+&& python3 -c "from ctypes import *; libc = CDLL('./libdebug.so'); print(libc.func())"
